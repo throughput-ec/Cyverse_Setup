@@ -63,6 +63,13 @@ Before running `neo4j` for the first time you need to set the admin password (an
 sudo neo4j-admin set-initial-password <yourpasswordhere>
 sudo service neo4j start
 ```
+### Add APOC Plugins
+
+The [APOC plugins](https://github.com/neo4j-contrib/neo4j-apoc-procedures) allow us to parse XML files for the NSF awards, to add them to the larger graph database.  They are installed by downloading the latest version of the `jar` package:
+
+```
+sudo curl -o /var/lib/neo4j/plugins/apoc-3.2.3.5-all.jar "https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.2.3.5/apoc-3.2.3.5-all.jar"
+```
 
 ### Setting up Remote Access
 
