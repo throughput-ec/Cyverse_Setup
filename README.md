@@ -26,6 +26,15 @@ sudo yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 ``` 
 
+To install `docker-compose` for some of the work we use:
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+
+This allows us to use `docker-compose` files in other repositories to facilitate some of our development workflows.
+
+
 ### neo4j
 
 To install `neo4j`, the graph database used in this project:
