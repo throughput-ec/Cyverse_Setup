@@ -37,6 +37,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 This allows us to use `docker-compose` files in other repositories to facilitate some of our development workflows.
 
+Then start the `docker` system up:
+
+```
+sudo systemctl status docker.service -l
+```
 
 ### neo4j
 
