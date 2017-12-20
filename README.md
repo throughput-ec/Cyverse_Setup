@@ -24,12 +24,15 @@ sudo yum install -y yum-utils \
 sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install docker-ce -y
 ``` 
 
 To install `docker-compose` for some of the work we use:
 
 ```
 sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 This allows us to use `docker-compose` files in other repositories to facilitate some of our development workflows.
