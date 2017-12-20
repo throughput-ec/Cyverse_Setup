@@ -8,9 +8,9 @@ The VM runs CentOS7, but comes as a clean install.  A number of programs need to
 ```bash
 sudo yum update
 sudo yum upgrade
-sudo yum install R git nano libcurl-devel -y
+sudo yum install R git nano libcurl-devel libxml2-devel -y
 ```
-The package `libcurl-devel` is used in the `httr` and `curl` R packages that we will install later.
+The package `libcurl-devel` is used in the `httr` and `curl` R packages that we will install later.  `libxml2-devel` is used in the `xml2` package.
 
 ### Docker
 
@@ -37,11 +37,21 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 This allows us to use `docker-compose` files in other repositories to facilitate some of our development workflows.
 
+I've added myself to a docker group:
+
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
+```
+
 Then start the `docker` system up:
 
 ```
-sudo systemctl status docker.service -l
+sudo systemctl start docker 
 ```
+
+This should happen on startup (having run , but if you get errors then use that command.
 
 ### neo4j
 
@@ -97,3 +107,10 @@ sudo curl -o /var/lib/neo4j/plugins/apoc-3.2.3.5-all.jar "https://github.com/neo
  
  Then access the server using the Cyverse host's IP address (using `hostname -I`).  Note that a firewall exception must be made.
  
+## Installing R
+
+Given the R installation above, the following packages have been required:
+
+```
+Rscript -e "install.packages(c('RNeo4j', 'httr', 'readr', 'dplyr', 'curl', 'xml2', 'purrr'), contriburl=)"
+```
