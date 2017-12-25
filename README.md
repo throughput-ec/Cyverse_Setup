@@ -8,7 +8,7 @@ The VM runs CentOS7, but comes as a clean install.  A number of programs need to
 ```bash
 sudo yum update
 sudo yum upgrade
-sudo yum install R git nano libcurl-devel libxml2-devel -y
+sudo yum install R git nano libcurl-devel libxml2-devel time -y
 ```
 The package `libcurl-devel` is used in the `httr` and `curl` R packages that we will install later.  `libxml2-devel` is used in the `xml2` package.
 
