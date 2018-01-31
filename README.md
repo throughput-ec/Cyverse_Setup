@@ -114,3 +114,12 @@ Given the R installation above, the following packages have been required:
 ```
 Rscript -e "install.packages(c('RNeo4j', 'httr', 'readr', 'dplyr', 'curl', 'xml2', 'purrr'), contriburl=)"
 ```
+
+## Installing Maven
+
+To build a Java project, we will need Maven:
+
+```
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install apache-maven
+```
